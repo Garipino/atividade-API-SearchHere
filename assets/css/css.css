@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'steampunk';
+    src: url(../font/jack-of-gears-font/JackOfGears-YzD1v.ttf);
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(105, 51, 15);
+}
+
+.tudo{
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#inicio{
+
+
+    .cabecalho{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 80px;
+
+    
+
+        .titulo{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            background-color: rgba(94, 44, 36, 0.699);
+            border-radius: 100px;
+            border: 5px solid rgb(49, 9, 2);
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+
+        .img{
+            animation: spin 10s linear infinite
+
+        }
+
+        .img2{
+            animation: spin2 0.3s linear
+
+        }
+
+
+
+        h1{
+            font-family: 'steampunk';
+            font-size: 80px;
+            margin: 0px;
+            color: rgb(49, 9, 2);
+
+        }
+    }
+}
+
+#info{
+
+    .buscar-1{
+        text-align: center;
+        background-color: rgba(94, 44, 36, 0.699);
+        border: 2px solid rgb(49, 9, 2);
+        border-radius: 50px;
+        margin: 20px;
+
+        h2{
+        font-size: 20px;
+        font-family: 'steampunk';
+        color: rgb(49, 9, 2);
+        }
+    }
+
+    .cep{
+        text-align: center;
+        border: none;
+        width: 256px;
+        height: 40px;
+        background-color: rgba(94, 44, 36, 0.699);
+        color: white;
+        border-radius: 50px;
+        
+
+    }
+
+    .botaozinho{
+        margin: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .botao{
+            border: none;
+            font-family: 'steampunk';
+            font-size: 20px;
+            width: 120px;
+            height: 40px;
+            border-radius: 50px;
+            background-color: rgb(207, 84, 62);
+            font-weight: bold;
+            color: rgb(116, 29, 29);
+        }
+
+    }
+}
+
+
+
+
+ @keyframes spin {
+        100%{
+            transform: rotate(360deg);
+        }
+        
+    }
+
+    @keyframes spin2 {
+        100%{
+            transform: rotate(360deg);
+        }
+        
+    }

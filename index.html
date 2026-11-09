@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SearchHere</title>
+    <link rel="stylesheet" href="assets/css/css.css">
+</head>
+<body>
+    <main>
+        <div class="tudo">
+            <section id="inicio">
+                    <div class="cabecalho">
+                        <div class="titulo">
+                            <h1>SEARCH HERE</h1>
+                            <div class="img" id="img">
+                                <img src="assets/images/rosa-dos-ventos-old-2.png" alt="rosa-dos-ventos" width="200px" height="200px">
+                            </div>
+                        </div>
+                        
+                    </div>
+            </section>
+
+
+            <section id="info">
+                <div class="buscar-1">
+                    <h2>CEP :</h2>
+                </div>
+                <input type="text" class="cep" id="cep" placeholder="Digite seu Cep">
+                <div class="botaozinho">
+                    <button class="botao" onclick="BuscarCep()">BUSCAR</button>
+                </div>
+                <div id="DivResultado"></div>
+                
+            </section>
+
+
+            <script>
+
+                async function BuscarCep() {
+                    let cep = document.getElementById('cep').value;
+                    const resultado = document.getElementById('DivResultado');
+                    //fiz uma att aq
+                    var img = document.getElementById('img');
+
+                    img.classList.replace("img", "img2");
+
+                    setTimeout(function() {
+                        img.classList.replace("img2", "img")
+                    }, 300);
+                    //ate aqui
+
+
+                    cep = cep.replace(/\D/g, '');
+
+                    if (cep.length !== 8) {
+                        resultado.style.display = 'block';
+                        resultado.innerHTML = '<p style="color: red;">Por favor digite um CEP válido.</p>';
+                        return;
+                    }
+
+                    try{
+                        const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                        const dados = await resposta.json();
+
+                        if (dados.erro) {
+                            resultado.innerHTML = '<p style="color: red;">CEP não encontrado </p>';
+
+                        } else {
+                            resultado.innerHTML = `
+                            
+                            <p style="color: white;"><strong>Rua:</strong> ${dados.logradouro}</p>
+                            <p style="color: white;"><strong>Bairro:</strong> ${dados.bairro}</p>
+                            <p style="color: white;"><strong>Cidade/UF:</strong> ${dados.localidade} - ${dados.uf}</p>
+                            <p style="color: white;><strong>DDD:</strong> ${dados.ddd}</p>`;
+                        }
+                    }  catch (erro) { 
+                        resultado.innerHTML = '<p style="color: red;">Erro na requisição.</p>';
+                    }
+                }
+            </script>
+        </div>
+    </main>
+</body>
+</html>
