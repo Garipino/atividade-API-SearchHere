@@ -108,6 +108,11 @@ body{
             color: rgb(116, 29, 29);
         }
 
+        .botao:hover{
+            cursor: pointer;
+
+        }
+
     }
 }
 

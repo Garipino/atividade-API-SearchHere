@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SearchHere</title>
-    <link rel="stylesheet" href="assets/css/css.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <main>
@@ -72,7 +72,7 @@
                             <p style="color: white;"><strong>Rua:</strong> ${dados.logradouro}</p>
                             <p style="color: white;"><strong>Bairro:</strong> ${dados.bairro}</p>
                             <p style="color: white;"><strong>Cidade/UF:</strong> ${dados.localidade} - ${dados.uf}</p>
-                            <p style="color: white;><strong>DDD:</strong> ${dados.ddd}</p>`;
+                            <p style="color: white;"><strong>DDD:</strong> ${dados.ddd}</p>`;
                         }
                     }  catch (erro) { 
                         resultado.innerHTML = '<p style="color: red;">Erro na requisição.</p>';
